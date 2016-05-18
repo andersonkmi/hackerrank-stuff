@@ -2,7 +2,7 @@ package org.sharpsw;
 
 import java.util.*;
 
-public class Solution {
+public class Pairs {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in); // use the Scanner class to read from stdin
         String firstLine = scan.nextLine();
