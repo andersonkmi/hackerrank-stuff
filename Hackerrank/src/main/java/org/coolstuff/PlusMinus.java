@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 /**
  * Created by andersonkmi on 7/23/16.
+ * Ref: Plus Minus exercise in Hackerrank
  */
 public class PlusMinus {
     public static void main(String[] args) {
