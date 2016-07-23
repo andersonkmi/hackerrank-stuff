@@ -1,4 +1,4 @@
-package org.sharpsw;
+package org.coolstuff;
 
 import java.util.Scanner;
 import java.util.StringTokenizer;
