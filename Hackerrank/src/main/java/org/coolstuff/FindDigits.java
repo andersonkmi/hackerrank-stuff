@@ -21,10 +21,10 @@ public class FindDigits {
         for(int index = 0; index < testQuantity; index++) {
             char[] digits = String.valueOf(arr[index]).toCharArray();
 
-            for(int digitIndex = 0; digitIndex < digits.length; digitIndex++) {
-                int digitValue = Character.digit(digits[digitIndex], 10);
-                if(digitValue > 0) {
-                    if(arr[index] % digitValue == 0) {
+            for (char digit : digits) {
+                int digitValue = Character.digit(digit, 10);
+                if (digitValue > 0) {
+                    if (arr[index] % digitValue == 0) {
                         results[index] = results[index] + 1;
                     }
                 }
@@ -32,8 +32,8 @@ public class FindDigits {
         }
 
         // Prints the result
-        for(int index = 0; index < results.length; index++) {
-            System.out.println(results[index]);
+        for (int result : results) {
+            System.out.println(result);
         }
     }
 }
