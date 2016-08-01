@@ -1,6 +1,5 @@
 package org.coolstuff;
 
-import java.io.File;
 import java.util.*;
 
 /**

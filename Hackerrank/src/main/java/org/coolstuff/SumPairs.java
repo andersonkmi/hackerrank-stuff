@@ -1,7 +1,6 @@
 package org.coolstuff;
 
 import java.util.Arrays;
-import java.util.Collections;
 
 /**
  * Created by andersonkmi on 8/1/2016.

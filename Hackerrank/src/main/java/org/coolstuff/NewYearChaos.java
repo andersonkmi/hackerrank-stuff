@@ -1,8 +1,7 @@
 package org.coolstuff;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
+
 
 /**
  * Created by andersonkmi on 7/23/16.

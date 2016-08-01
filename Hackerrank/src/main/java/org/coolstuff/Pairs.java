@@ -1,6 +1,8 @@
 package org.coolstuff;
 
-import java.util.*;
+import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class Pairs {
     public static void main(String[] args) {
