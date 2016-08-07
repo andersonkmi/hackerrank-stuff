@@ -12,22 +12,29 @@ public class BinaryGap {
 
         int binaryGapSize = 0;
         String binaryRepresentation = Integer.toBinaryString(N);
-        int initialIndex = binaryRepresentation.indexOf('0');
+        int initialIndex = binaryRepresentation.indexOf('0', 1);
         while(initialIndex != -1) {
             int currentSize = 0;
             int finalPosition = initialIndex;
-            while(binaryRepresentation.charAt(finalPosition) == '0' && finalPosition < binaryRepresentation.length()) {
+            while(finalPosition < binaryRepresentation.length() && binaryRepresentation.charAt(finalPosition) == '0') {
                 finalPosition++;
             }
 
-            currentSize = finalPosition - initialIndex;
-            if(currentSize > binaryGapSize) {
-                binaryGapSize = currentSize;
+            if(finalPosition < binaryRepresentation.length()) {
+                currentSize = finalPosition - initialIndex;
+                if(currentSize > binaryGapSize) {
+                    binaryGapSize = currentSize;
+                }
             }
 
             initialIndex = binaryRepresentation.indexOf('0', finalPosition);
         }
 
         return binaryGapSize;
+    }
+
+    public static void main(String[] args) {
+        BinaryGap service = new BinaryGap();
+        service.solution(561892);
     }
 }
