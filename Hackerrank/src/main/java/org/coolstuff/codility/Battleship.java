@@ -4,43 +4,6 @@ package org.coolstuff.codility;
  * Created by andersonkmi on 8/14/2016.
  */
 public class Battleship {
-    private enum Coords {
-        A,
-        B,
-        C,
-        D,
-        E,
-        F,
-        G,
-        H,
-        I,
-        J,
-        K,
-        L,
-        M,
-        N,
-        O,
-        P,
-        Q,
-        R,
-        S,
-        T,
-        U,
-        V,
-        W,
-        X,
-        Y,
-        Z;
-
-        public int getCoords(char coord) {
-            for(Coords item : Coords.values()) {
-                if(item.name().equalsIgnoreCase(String.valueOf(coord))) {
-                    return item.ordinal();
-                }
-            }
-            return null;
-        }
-    }
     public String solution(int dimension, String ships, String hits) {
 
         // Builds and initializes the board
@@ -62,18 +25,6 @@ public class Battleship {
     }
 
     private int convertLetterToPosition(char position) {
-        switch(position) {
-            case 'A':
-                return 0;
-            break;
-
-            case 'B':
-                return 1;
-            break;
-
-            case 'C':
-                return 2;
-            break;
-        }
+        return (int)Character.toUpperCase(position) - 65;
     }
 }
