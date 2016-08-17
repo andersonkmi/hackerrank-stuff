@@ -1,5 +1,9 @@
 package org.coolstuff.codility;
 
+import java.util.LinkedList;
+import java.util.List;
+import java.util.StringTokenizer;
+
 /**
  * Created by andersonkmi on 8/14/2016.
  */
@@ -32,13 +36,13 @@ public class Battleship {
         Y,
         Z;
 
-        public int getCoords(char coord) {
+        public static int getCoords(char coord) {
             for(Coords item : Coords.values()) {
                 if(item.name().equalsIgnoreCase(String.valueOf(coord))) {
                     return item.ordinal();
                 }
             }
-            return null;
+            return -1;
         }
     }
     public String solution(int dimension, String ships, String hits) {
@@ -61,19 +65,19 @@ public class Battleship {
         return board;
     }
 
-    private int convertLetterToPosition(char position) {
-        switch(position) {
-            case 'A':
-                return 0;
-            break;
+    private List<int[][]> giveCoordinates(String coordinates) {
+        List<int[][]> results = new LinkedList<>();
+        StringTokenizer tokenizer = new StringTokenizer(coordinates);
 
-            case 'B':
-                return 1;
-            break;
+        String firstCoord = tokenizer.nextToken();
+        String secondCoord = tokenizer.nextToken();
 
-            case 'C':
-                return 2;
-            break;
-        }
+        int firstCoordRow = Integer.valueOf(firstCoord.charAt(0));
+        int firstCoordCol = Coords.getCoords(firstCoord.charAt(1));
+
+        int secondCoordRow = Integer.valueOf(secondCoord.charAt(0));
+        int secondCoordCol = Coords.getCoords(secondCoord.charAt(1));
+
+        return results;
     }
 }
