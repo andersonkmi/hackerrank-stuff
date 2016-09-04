@@ -6,23 +6,16 @@ import java.util.Arrays;
  * Created by anderson.ito on 23/08/2016.
  */
 public class PermMissingElem {
-    public int solution(int[] array) {
-        if(array.length == 0) {
-            return 1;
-        }
-
-        Arrays.sort(array);
-
-        int missing = -1;
-        int i = 0;
-        while(i < array.length) {
-
-            if(array[i] != i + 1) {
-                missing = i + 1;
-                break;
+    public int solution(int[] A) {
+        int previous = 0;
+        if (A.length != 0) {
+            Arrays.sort(A);
+            for (int i : A) {
+                if (++previous != i) {
+                    return previous;
+                }
             }
-            i++;
         }
-        return missing;
+        return ++previous;
     }
 }
