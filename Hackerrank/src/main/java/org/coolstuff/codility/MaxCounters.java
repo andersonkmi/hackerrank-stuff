@@ -8,33 +8,34 @@ public class MaxCounters {
     public int[] solution(int N, int[] A) {
         // write your code in Java SE 8
         int[] counters = new int[N];
+
+        int maxValue = 0;
+
         for(int pos = 0; pos < A.length; pos++) {
-            if(A[pos] >= 1 && A[pos] <= N) {
-                increase(A[pos], counters);
-            } else if(A[pos] == N + 1) {
-                maxCounters(counters);
+            if(A[pos] <= N) {
+                int increasedValue = increase(A[pos], counters);
+                if(increasedValue > maxValue) {
+                    maxValue = increasedValue;
+                }
+            } else {
+                maxCounters(counters, maxValue);
             }
         }
         return counters;
     }
 
-    private void increase(int pos, int[] counters) {
+    private int increase(int pos, int[] counters) {
         int position = pos - 1;
-        if(position >= 0 && position < counters.length) {
+        if(position < counters.length) {
             counters[position] = counters[position] + 1;
+            return counters[position];
         }
+        return 0;
     }
 
-    private void maxCounters(int[] counters) {
-        int max = findMax(counters);
+    private void maxCounters(int[] counters, int max) {
         for(int index = 0; index < counters.length; index++) {
             counters[index] = max;
         }
-    }
-
-    private int findMax(int[] counters) {
-        int[] elements = Arrays.copyOf(counters, counters.length);
-        Arrays.sort(elements);
-        return elements[elements.length - 1];
     }
 }
