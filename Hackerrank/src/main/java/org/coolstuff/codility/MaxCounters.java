@@ -1,6 +1,5 @@
 package org.coolstuff.codility;
 
-import java.util.Arrays;
 /**
  * Created by anderson.ito on 12/8/2016.
  */
