@@ -23,7 +23,6 @@ public class MaxCounters {
         if(position >= 0 && position < counters.length) {
             counters[position] = counters[position] + 1;
         }
-
     }
 
     private void maxCounters(int[] counters) {
