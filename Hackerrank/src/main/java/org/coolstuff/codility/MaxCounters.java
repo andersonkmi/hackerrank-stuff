@@ -24,10 +24,9 @@ public class MaxCounters {
     }
 
     private int increase(int pos, int[] counters) {
-        int position = pos - 1;
-        if(position < counters.length) {
-            counters[position] = counters[position] + 1;
-            return counters[position];
+        if(pos - 1 < counters.length) {
+            counters[pos - 1]++;
+            return counters[pos-1];
         }
         return 0;
     }
