@@ -1,5 +1,7 @@
 package org.coolstuff.codility;
 
+import java.util.Arrays;
+
 /**
  * Created by anderson.ito on 12/8/2016.
  */
@@ -10,7 +12,8 @@ public class MaxCounters {
 
         int maxValue = 0;
 
-        for(int pos = 0; pos < A.length; pos++) {
+        int pos = 0;
+        while(pos < A.length) {
             if(A[pos] <= N) {
                 int increasedValue = increase(A[pos], counters);
                 if(increasedValue > maxValue) {
@@ -19,6 +22,7 @@ public class MaxCounters {
             } else {
                 maxCounters(counters, maxValue);
             }
+            pos++;
         }
         return counters;
     }
@@ -32,8 +36,6 @@ public class MaxCounters {
     }
 
     private void maxCounters(int[] counters, int max) {
-        for(int index = 0; index < counters.length; index++) {
-            counters[index] = max;
-        }
+        Arrays.fill(counters, max);
     }
 }
