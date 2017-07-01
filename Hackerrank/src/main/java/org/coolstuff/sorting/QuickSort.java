@@ -1,7 +1,5 @@
 package org.coolstuff.sorting;
 
-import com.sun.xml.internal.bind.v2.model.annotation.Quick;
-
 /**
  * Created by andersonkmi on 8/28/16.
  */
