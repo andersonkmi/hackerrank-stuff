@@ -40,4 +40,12 @@ public class CheckPermutationTestCase {
 
         Assert.assertThat(check.isPermutation(first, second), is(false));
     }
+
+    @Test
+    public void verifyCheckSameStringUppercase() {
+        String first = "Anderson";
+        String second = "anderson";
+
+        Assert.assertThat(check.isPermutation(first, second), is(false));
+    }
 }
