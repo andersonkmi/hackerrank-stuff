@@ -5,9 +5,6 @@ import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Created by andersonkmi on 7/2/2017.
- */
 public class PrintTreeNodesByLevel {
     public void print(TreeNode root) {
         Deque<TreeNode> nodes = new ArrayDeque<>();
