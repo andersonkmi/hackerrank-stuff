@@ -7,8 +7,8 @@ import java.util.*;
  */
 public class Contacts {
     private static class TrieNode {
-        public TrieNode[] children = new TrieNode[26];
-        public int size = 0;
+        TrieNode[] children = new TrieNode[26];
+        int size = 0;
 
 
         private static int getCharIndex(char c) {
@@ -23,7 +23,7 @@ public class Contacts {
             children[getCharIndex(c)] = node;
         }
 
-        public void add(String str) {
+        void add(String str) {
             add(str, 0);
         }
 
@@ -43,7 +43,11 @@ public class Contacts {
             child.add(str, index + 1);
         }
 
-        public int findCount(String prefix, int index) {
+        int findCount(String prefix) {
+            return findCount(prefix, 0);
+        }
+
+        private int findCount(String prefix, int index) {
             if(index == prefix.length()) {
                 return size;
             }
@@ -71,7 +75,7 @@ public class Contacts {
             if(command.equals("add")) {
                 root.add(name);
             } else if(command.equals("find")) {
-                root.findCount(name, 0);
+                root.findCount(name);
             }
         }
     }
