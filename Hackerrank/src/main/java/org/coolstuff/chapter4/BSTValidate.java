@@ -2,7 +2,7 @@ package org.coolstuff.chapter4;
 
 public class BSTValidate {
     public boolean isValid(TreeNode root) {
-        return validate(root);
+        return checkBST(root, null, null);
     }
 
     private boolean validate(TreeNode node) {
@@ -21,6 +21,22 @@ public class BSTValidate {
             } else {
                 validate(node.getRightChild());
             }
+        }
+
+        return true;
+    }
+
+    private boolean checkBST(TreeNode node, Integer min, Integer max) {
+        if(node == null) {
+            return true;
+        }
+
+        if((min != null && node.getValue() <= min) || (max != null && node.getValue() > max)) {
+            return false;
+        }
+
+        if(!checkBST(node.getLeftChild(), min, node.getValue()) || !checkBST(node.getRightChild(), node.getValue(), max)) {
+            return false;
         }
 
         return true;

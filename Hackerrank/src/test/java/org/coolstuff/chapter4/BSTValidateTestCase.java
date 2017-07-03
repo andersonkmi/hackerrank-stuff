@@ -38,7 +38,7 @@ public class BSTValidateTestCase {
         MinimalTree service = new MinimalTree();
         TreeNode root = service.createMinimalBST(elements);
         root.getLeftChild().setValue(-1);
-        Assert.assertThat(sut.isValid(root), is(true));
+        Assert.assertThat(sut.isValid(root), is(false));
     }
 
     @Test
