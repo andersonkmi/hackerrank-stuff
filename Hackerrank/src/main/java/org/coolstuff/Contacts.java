@@ -28,11 +28,10 @@ public class Contacts {
         }
 
         private void add(String str, int index) {
+            size++;
             if(index == str.length()) {
                 return;
             }
-
-            size++;
             char current = str.charAt(index);
             TrieNode child = getNode(current);
             if(child == null) {
