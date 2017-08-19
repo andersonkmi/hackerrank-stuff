@@ -34,3 +34,23 @@ public class Solution {
         System.out.println(result);
     }
 }
+
+
+/*
+Node Delete(Node head, int position) {
+    // Complete this method
+    if(position == 0) {
+        head = head.next;
+    } else {
+        Node current = head;
+        Node previous = head;
+        for(int index = 0; index < position; index++) {
+            previous = current;
+            current = current.next;
+        }
+        previous.next = current.next;
+    }
+
+    return head;
+}
+ */
