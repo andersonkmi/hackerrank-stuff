@@ -53,4 +53,17 @@ Node Delete(Node head, int position) {
 
     return head;
 }
+
+boolean hasCycle(Node head) {
+    Node current = head;
+    List<Node> visitedNumbers = new ArrayList<>();
+    while(current != null) {
+        if(visitedNumbers.contains(current)) {
+            return true;
+        }
+        visitedNumbers.add(current);
+        current = current.next;
+    }
+    return false;
+}
  */
