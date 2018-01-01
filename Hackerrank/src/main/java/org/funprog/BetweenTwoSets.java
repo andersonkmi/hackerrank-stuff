@@ -1,30 +1,44 @@
 package org.funprog;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class BetweenTwoSets {
 
     public int getTotalX(int[] a, int[] b) {
-        int result = 0;
-        List<Integer> firstCondOK = new ArrayList<>();
-
-        // Verifies first condition
-        for(int index = 0; index < a.length; index++) {
-            boolean isOK = true;
-            for(int index2 = 0; index2 < a.length && isOK; index2++) {
-                if(a[index] % a[index2] != 0) {
-                    isOK = false;
-                }
-            }
-
-            if(isOK) {
-                firstCondOK.add(a[index]);
-            }
+        int f = lcm(a);
+        int l = gcd(b);
+        int count = 0;
+        for(int i = f, j =2; i<=l; i=f*j,j++){
+            if(l%i==0){ count++;}
         }
 
-        // Verifies second condition
-        
+        return count;
+    }
+
+    private int gcd(int a, int b) {
+        while (b > 0) {
+            int temp = b;
+            b = a % b; // % is remainder
+            a = temp;
+        }
+        return a;
+    }
+
+    private int gcd(int[] input) {
+        int result = input[0];
+        for (int i = 1; i < input.length; i++) {
+            result = gcd(result, input[i]);
+        }
+        return result;
+    }
+
+    private int lcm(int a, int b) {
+        return a * (b / gcd(a, b));
+    }
+
+    private int lcm(int[] input) {
+        int result = input[0];
+        for (int i = 1; i < input.length; i++) {
+            result = lcm(result, input[i]);
+        }
         return result;
     }
 }
