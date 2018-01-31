@@ -9,10 +9,12 @@ public class AddTwoNumbers {
 
         ListNode current = null;
         ListNode result = null;
+
         while(root1 != null || root2 != null) {
             int val1 = 0;
             int val2 = 0;
 
+            // Verify if the nodes are not null, if one them are, then use value = 0
             if(root1 != null) {
                 val1 = root1.val;
             }
@@ -21,11 +23,14 @@ public class AddTwoNumbers {
                 val2 = root2.val;
             }
 
+            // Performs first sum
             int amount = val1 + val2;
+
             if (take1) {
                 amount++;
             }
 
+            // Verifies if number is equal to or higher than 10
             if(amount >= 10) {
                 amount = amount % 10;
                 take1 = true;
@@ -33,6 +38,7 @@ public class AddTwoNumbers {
                 take1 = false;
             }
 
+            // Creates the node with resulting sum
             ListNode node = new ListNode(amount);
             if(current != null) {
                 current.next = node;
@@ -50,6 +56,8 @@ public class AddTwoNumbers {
             }
         }
 
+        // Supposing the last sum was equal to or higher than 10, then
+        // it needs to create an extra digit
         if(take1) {
             ListNode node = new ListNode(1);
             current.next = node;
