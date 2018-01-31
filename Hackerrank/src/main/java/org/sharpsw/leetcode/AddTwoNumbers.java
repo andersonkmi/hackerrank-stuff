@@ -9,8 +9,19 @@ public class AddTwoNumbers {
 
         ListNode current = null;
         ListNode result = null;
-        while(root1 != null && root2 != null) {
-            int amount = root1.val + root2.val;
+        while(root1 != null || root2 != null) {
+            int val1 = 0;
+            int val2 = 0;
+
+            if(root1 != null) {
+                val1 = root1.val;
+            }
+
+            if(root2 != null) {
+                val2 = root2.val;
+            }
+
+            int amount = val1 + val2;
             if (take1) {
                 amount++;
             }
@@ -30,8 +41,13 @@ public class AddTwoNumbers {
             }
             current = node;
 
-            root1 = root1.next;
-            root2 = root2.next;
+            if(root1 != null) {
+                root1 = root1.next;
+            }
+
+            if(root2 != null) {
+                root2 = root2.next;
+            }
         }
 
         if(take1) {
